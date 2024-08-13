@@ -104,7 +104,8 @@ it('should fetch thumbnail when dashboard has no thumbnail URL and feature flag 
     response: new Response(
       JSON.stringify({ thumbnail_url: '/new-thumbnail.png' }),
     ),
-    json: () => Promise.resolve({ thumbnail_url: '/new-thumbnail.png' }),
+    json: () =>
+      Promise.resolve({ result: { thumbnail_url: '/new-thumbnail.png' } }),
   });
   const { rerender } = render(
     <DashboardCard
